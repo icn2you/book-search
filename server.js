@@ -1,7 +1,6 @@
 // Node dependencies
 const express = require('express')
 const mongoose = require('mongoose')
-const path = require('path')
 const logger = require('morgan')
 
 // HTTP port
@@ -31,11 +30,6 @@ mongoose.connection
   .once('connected', () => {
     console.log('Successfully connected to the database.')
   })
-
-// Send every request to React app.
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, './client/build/index.html'))
-})
 
 // Launch server and listen for requests.
 app.listen(PORT, () => {
