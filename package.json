@@ -1,0 +1,58 @@
+{
+  "name": "fsf-a16",
+  "version": "0.1.0",
+  "description": "Google Books React Search",
+  "main": "server.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.9.25",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build",
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "lint": "eslint . && cd client && npm run lint",
+    "seed": "node scripts/seedDB.js",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "start:prod": "node server.js"
+  },
+  "eslintConfig": {
+    "extends": [
+      "standard"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/icn2you/fsf-a16.git"
+  },
+  "keywords": [
+    "book",
+    "book search",
+    "Google Books",
+    "MERN",
+    "Mongo",
+    "Mongoose",
+    "React"
+  ],
+  "author": "Christopher B. Zenner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/icn2you/fsf-a16/issues"
+  },
+  "homepage": "https://github.com/icn2you/fsf-a16#readme"
+}

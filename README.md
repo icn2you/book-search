@@ -1,2 +1,3 @@
-# fsf-a16
-Full Stack Flex Assignment 16: Google Books React Search
+# Google Books React Search
+
+## [The Coding Boot Camp @ UCLA Extension](https://bootcamp.uclaextension.edu/coding/)
