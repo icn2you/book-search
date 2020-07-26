@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { Main } from '../components'
-import { API } from '../utils'
+import { Grid } from '@material-ui/core'
+import { 
+  Header, Main, Footer, SearchForm, SearchResult 
+} from '../components'
+// import { API } from '../utils'
 
 const useStyles = makeStyles(theme => ({
   // CSS styles
@@ -9,6 +12,7 @@ const useStyles = makeStyles(theme => ({
 
 const Search = (props) => {
   // state variables
+  const classes = useStyles()
 
   useEffect(() => {
 
@@ -16,7 +20,18 @@ const Search = (props) => {
 
   return (
     <>
-      // ...
+      <Header />
+      <Main>
+        <Grid alignItems="center">
+          <Grid item xs={12}>
+            <SearchForm />
+          </Grid>
+          <Grid item xs={12}>
+            <SearchResult />          
+          </Grid>
+        </Grid>
+      </Main>
+      {/* <Footer /> */}
     </>
   )
 }
