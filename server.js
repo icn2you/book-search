@@ -1,7 +1,10 @@
 // Node dependencies
+require('dotenv').config()
+
 const express = require('express')
-const mongoose = require('mongoose')
 const logger = require('morgan')
+const mongoose = require('mongoose')
+// const path = require('path')
 
 // HTTP port
 const PORT = process.env.PORT || 3001
@@ -17,7 +20,9 @@ app.use(logger('dev'))
 // Serve static assets on production server.
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'))
-}
+} /* else {
+  express.static(path.join(__dirname, '/public'));
+} */
 
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
