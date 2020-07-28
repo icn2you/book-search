@@ -45,31 +45,37 @@ const BookCard = ({ title, isbns, authors, desc, link, image }) => {
               className={classes.title}>
               {title}
             </Typography>
-            <Typography variant="body2">
-              {
-                isbns.map((isbn, i) => (
-                  `${isbn.type.replace('_', '-')}: ${isbn.identifier}`
-                  + ((isbns.length > 1 && i < isbns.length - 1)
-                    ? ' / '
-                    : '')
-                ))
-              }
-            </Typography>
-            <Typography variant="h6">
-              by { 
-                authors.map((author, i) => {
-                  if (authors.length > 1 && i < authors.length - 1) {
-                    if (i < authors.length - 2) {
-                      return `${author}, `
-                    } else {
-                      return `${author} & `
-                    }
-                  } else {
-                    return author
+            { isbns
+              ? <Typography variant="body2">
+                {
+                  isbns.map((isbn, i) => (
+                    `${isbn.type.replace('_', '-')}: ${isbn.identifier}`
+                    + ((isbns.length > 1 && i < isbns.length - 1)
+                      ? ' / '
+                      : '')
+                  ))
+                }
+                </Typography>
+              : ''
+            }
+            { authors
+              ? <Typography variant="h6">
+                  by { 
+                    authors.map((author, i) => {
+                      if (authors.length > 1 && i < authors.length - 1) {
+                        if (i < authors.length - 2) {
+                          return `${author}, `
+                        } else {
+                          return `${author} & `
+                        }
+                      } else {
+                        return author
+                      }
+                    })
                   }
-                })
-              }
-            </Typography>
+                </Typography>
+              : ''
+            }
             <Typography variant="body1" noWrap>{desc}</Typography>
           </CardContent>
           <CardActions className={classes.actions}>
