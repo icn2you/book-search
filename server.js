@@ -2,11 +2,12 @@
 require('dotenv').config()
 
 const express = require('express')
+const routes = require('./routes')
+// const path = require('path')
 const logger = require('morgan')
 const mongoose = require('mongoose')
-// const path = require('path')
 
-// HTTP port
+// HTTP port & Mongo URI
 const PORT = process.env.PORT || 3001
 const MONGODB_URI =
   process.env.MONGODB_URI || 'mongodb://localhost/googlebooksdb'
@@ -14,16 +15,22 @@ const MONGODB_URI =
 // Create Express app and march on!
 const app = express()
 
+// Middleware
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+
 // Log server activity.
 app.use(logger('dev'))
 
 // Serve static assets on production server.
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'))
-} /* else {
-  express.static(path.join(__dirname, '/public'));
-} */
+}
 
+// Use app routes.
+app.use(routes)
+
+// Connect to database.
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
