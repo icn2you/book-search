@@ -1,3 +1,6 @@
+// context component
+export { default as DataContext } from './DataContext'
+
 // primary components
 export { default as Header } from './Header'
 export { default as Main } from './Main'
