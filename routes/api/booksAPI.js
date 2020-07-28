@@ -1,14 +1,13 @@
 const router = require('express').Router()
+const booksController = require('../../controllers/booksController')
 
 module.exports = (() => {
-  // GET
-  router.route('/api/books')
+  // GET & POST operations for `/api/books` routes
+  router.route('/')
+    .post(booksController.create)
 
-  // POST
-  router.route('/api/books')
-
-  // PUT
-  router.route('/api/books/:id')
+  // PUT operation for `/api/books/:id` route
+  router.route('/:id')
 
   return router
 })()
