@@ -5,18 +5,20 @@ import { NavBar } from '../../components'
 const Header = () => {
   return (
     <header>
-      <NavBar />  
-      <Grid alignItems="center">
-        <Grid item xs={12}>
-          <Box mt={4}>
-            <Typography variant='h2'
-              align="center"
-              gutterBottom>
-              Google Books Search
-            </Typography>
-          </Box>
+      <Box alignItems="center">
+        <NavBar />  
+        <Grid>
+          <Grid item xs={12}>
+            <Box mt={4}>
+              <Typography variant='h2'
+                align="center"
+                gutterBottom>
+                Google Books Search
+              </Typography>
+            </Box>
+          </Grid>
         </Grid>
-      </Grid>
+      </Box>
     </header>   
   )
 }
