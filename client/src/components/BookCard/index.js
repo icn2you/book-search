@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { 
   Box, Button, Card, CardActions, CardContent, CardMedia, Typography 
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
+import API from '../../utils/API'
 
 const useStyles = makeStyles({
   root: {
@@ -26,8 +27,22 @@ const useStyles = makeStyles({
   }
 })
 
-const BookCard = ({ title, isbns, authors, desc, link, image }) => {
+const BookCard = ({ title, isbns, authors, desc, image, link }) => {
+  const [disabled, setDisabled] = useState(false)
   const classes = useStyles()
+
+  const handleSaveBook = () => {
+    API.saveBook({
+      title: title,
+      isbns: isbns,
+      authors: authors,
+      description: desc,
+      image: image,
+      link: link
+    })
+      .then(() => setDisabled(true))
+      .catch(err => console.error(err.stack))
+  }
 
   return (
     <Box my={3}>
@@ -80,8 +95,12 @@ const BookCard = ({ title, isbns, authors, desc, link, image }) => {
           </CardContent>
           <CardActions className={classes.actions}>
             <Box width={1} textAlign="right">
-              <Button href={link}>View</Button>
-              <Button>Save</Button>
+              <Button href={link} target="_blank">View</Button>
+              <Button 
+                disabled={disabled}
+                onClick={handleSaveBook}>
+                {disabled ? 'Saved' : 'Save'}
+              </Button>
             </Box>  
           </CardActions>
         </Box>
