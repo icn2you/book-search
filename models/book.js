@@ -5,6 +5,7 @@ const Schema = mongoose.Schema
 module.exports = (() => {
   const BookSchema = new Schema({
     title: { type: String, required: true },
+    isbns: [{ type: String }],
     authors: [{ type: String, required: true }],
     description: String,
     image: String,
