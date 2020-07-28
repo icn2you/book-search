@@ -17,7 +17,7 @@ const SearchResult = () => {
         { state.bookData.length
           ? state.bookData.map(book =>
               <BookCard 
-                key={book.id}
+                key={`${book.id}${book.etag}`}
                 title={book.volumeInfo.title}
                 isbns={book.volumeInfo.industryIdentifiers}
                 authors={book.volumeInfo.authors}
