@@ -20,5 +20,12 @@ export default {
       `https://www.googleapis.com/books/v1/volumes?q=${queryStr}`)
       .then((resp) => resp.json())
       .catch(err => console.error(err.stack))
-  }
+  },
+  saveBook: (book) => fetch('/api/books', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(book)
+  })
+    .then((resp => resp.json()))
+    .catch(err => console.error(err.stack))
 }
