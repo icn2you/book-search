@@ -25,8 +25,6 @@ const SearchForm = () => {
   const handleFormSubmit = ev => {
     ev.preventDefault()
 
-    console.log(this)
-
     const queryStr = 
       formData.query.trim().toLowerCase().replace(/\s+/g, '+')
 
