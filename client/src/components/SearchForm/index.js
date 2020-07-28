@@ -37,11 +37,14 @@ const SearchForm = () => {
       .then(data => {
         // DEBUG:
         // console.log(data.items)
+
+        const msg = (formData.query ? '' : 'No books found.')
         
         dispatch({ 
-          type: 'update', 
-          data: data.items, 
-          query: formData.query 
+          type: 'update',
+          query: formData.query,
+          data: data.items,
+          message: msg
         })
       })
       .catch(err => console.error(err.stack))

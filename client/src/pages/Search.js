@@ -7,8 +7,8 @@ import {
 const reducer = (state, action) => {
   if (action.type === 'update') {
       return { 
-        bookData: action.data, 
         queryStr: action.query,
+        bookData: action.data, 
         userMsg: action.message
       }
   } else {
@@ -20,7 +20,7 @@ const reducer = (state, action) => {
 const Search = () => {
   // state variables
   const [state, dispatch] = 
-    useReducer(reducer, { bookData: [], queryStr: '', userMsg: '' })
+    useReducer(reducer, { queryStr: '', bookData: [], userMsg: '' })
 
   return (
     <>
