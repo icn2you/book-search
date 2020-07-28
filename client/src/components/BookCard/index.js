@@ -74,7 +74,7 @@ const BookCard = ({ title, isbns, authors, desc, link, image }) => {
           </CardContent>
           <CardActions className={classes.actions}>
             <Box width={1} textAlign="right">
-              <Button>View</Button>
+              <Button href={link}>View</Button>
               <Button>Save</Button>
             </Box>  
           </CardActions>
