@@ -24,12 +24,23 @@ const useStyles = makeStyles({
   },
   title: {
     fontWeight: 'bold'
+  },
+  removed: {
+    display: 'none'
   }
 })
 
-const BookCard = ({ title, isbns, authors, desc, image, link }) => {
+const BookCard = ({ 
+  id, title, isbns, authors, desc, image, link, type }) => {
+  const [displayed, setDisplayed] = useState(true)
   const [disabled, setDisabled] = useState(false)
   const classes = useStyles()
+
+  const handleDeleteBook = () => {
+    API.deleteBook(id)
+      .then(({ ok }) => (ok ? setDisplayed(false) : null))
+      .catch(err => console.error(err.stack))
+  }
 
   const handleSaveBook = () => {
     API.saveBook({
@@ -46,7 +57,7 @@ const BookCard = ({ title, isbns, authors, desc, image, link }) => {
   }
 
   return (
-    <Box my={3}>
+    <Box my={3} className={displayed ? null : classes.removed}>
       <Card className={classes.root}>
         <CardMedia
           image={image}
@@ -61,7 +72,7 @@ const BookCard = ({ title, isbns, authors, desc, image, link }) => {
               className={classes.title}>
               {title}
             </Typography>
-            { isbns
+            { isbns.length
               ? <Typography variant="body2">
                 {
                   isbns.map((isbn, i) => (
@@ -74,7 +85,7 @@ const BookCard = ({ title, isbns, authors, desc, image, link }) => {
                 </Typography>
               : ''
             }
-            { authors
+            { authors.length
               ? <Typography variant="h6">
                   by { 
                     authors.map((author, i) => {
@@ -97,11 +108,17 @@ const BookCard = ({ title, isbns, authors, desc, image, link }) => {
           <CardActions className={classes.actions}>
             <Box width={1} textAlign="right">
               <Button href={link} target="_blank">View</Button>
-              <Button 
-                disabled={disabled}
-                onClick={handleSaveBook}>
-                {disabled ? 'Saved' : 'Save'}
-              </Button>
+              { (type === 'search') 
+                ? <Button 
+                    disabled={disabled}
+                    onClick={handleSaveBook}>
+                    {disabled ? 'Saved' : 'Save'}
+                  </Button>
+                : <Button
+                    onClick={handleDeleteBook}>
+                    Delete
+                  </Button>
+              }
             </Box>  
           </CardActions>
         </Box>
