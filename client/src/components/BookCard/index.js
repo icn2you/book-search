@@ -38,7 +38,8 @@ const BookCard = ({ title, isbns, authors, desc, image, link }) => {
       authors: authors,
       description: desc,
       image: image,
-      link: link
+      link: link,
+      saved: true
     })
       .then(() => setDisabled(true))
       .catch(err => console.error(err.stack))
