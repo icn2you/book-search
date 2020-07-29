@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { 
-  Box, Button, Card, CardActions, CardContent, CardMedia, Typography 
+import {
+  Box, Button, Card, CardActions, CardContent, CardMedia, Typography
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import API from '../../utils/API'
@@ -30,8 +30,7 @@ const useStyles = makeStyles({
   }
 })
 
-const BookCard = ({ 
-  id, title, isbns, authors, desc, image, link, type }) => {
+const BookCard = ({ id, title, isbns, authors, desc, image, link, type }) => {
   const [displayed, setDisplayed] = useState(true)
   const [disabled, setDisabled] = useState(false)
   const classes = useStyles()
@@ -65,42 +64,44 @@ const BookCard = ({
           className={classes.media} />
         <Box overflow="hidden"
           textOverflow="ellipsis"
-          width={1} 
+          width={1}
           className={classes.details}>
           <CardContent className={classes.content}>
-            <Typography variant="h5" 
+            <Typography variant="h5"
               className={classes.title}>
               {title}
             </Typography>
-            { isbns.length
+            { isbns
               ? <Typography variant="body2">
                 {
                   isbns.map((isbn, i) => (
-                    `${isbn.type.replace('_', '-')}: ${isbn.identifier}`
-                    + ((isbns.length > 1 && i < isbns.length - 1)
+                    `${isbn.type.replace('_', '-')}: ${isbn.identifier}` +
+                    ((isbns.length > 1 && i < isbns.length - 1)
                       ? ' / '
                       : '')
                   ))
                 }
-                </Typography>
+              </Typography>
               : ''
             }
-            { authors.length
+            { authors
               ? <Typography variant="h6">
-                  by { 
-                    authors.map((author, i) => {
-                      if (authors.length > 1 && i < authors.length - 1) {
-                        if (i < authors.length - 2) {
-                          return `${author}, `
-                        } else {
-                          return `${author} & `
-                        }
+                {
+                  authors.map((author, i) => {
+                    const by = (i === 0) ? 'by ' : ''
+
+                    if (authors.length > 1 && i < authors.length - 1) {
+                      if (i < authors.length - 2) {
+                        return `${by}${author}, `
                       } else {
-                        return author
+                        return `${by}${author} & `
                       }
-                    })
-                  }
-                </Typography>
+                    } else {
+                      return `${by}${author}`
+                    }
+                  })
+                }
+              </Typography>
               : ''
             }
             <Typography variant="body1" noWrap>{desc}</Typography>
@@ -108,18 +109,18 @@ const BookCard = ({
           <CardActions className={classes.actions}>
             <Box width={1} textAlign="right">
               <Button href={link} target="_blank">View</Button>
-              { (type === 'search') 
-                ? <Button 
-                    disabled={disabled}
-                    onClick={handleSaveBook}>
-                    {disabled ? 'Saved' : 'Save'}
-                  </Button>
+              { (type === 'search')
+                ? <Button
+                  disabled={disabled}
+                  onClick={handleSaveBook}>
+                  {disabled ? 'Saved' : 'Save'}
+                </Button>
                 : <Button
-                    onClick={handleDeleteBook}>
+                  onClick={handleDeleteBook}>
                     Delete
-                  </Button>
+                </Button>
               }
-            </Box>  
+            </Box>
           </CardActions>
         </Box>
       </Card>
