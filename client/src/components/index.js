@@ -8,6 +8,8 @@ export { default as Footer } from './Footer'
 
 // secondary components
 export { default as BookCard } from './BookCard'
+export { default as BookResults } from './BookResults'
+export { default as GoogleBooks } from './GoogleBooks'
 export { default as NavBar } from './NavBar'
+export { default as SavedBooks } from './SavedBooks'
 export { default as SearchForm } from './SearchForm'
-export { default as SearchResult } from './SearchResult'
