@@ -11,8 +11,8 @@ module.exports = {
   delete: (req, res) => {
     db.Book
       .findOneAndUpdate(
-        { _id: req.params.id }, 
-        req.body, 
+        { _id: req.params.id },
+        req.body,
         { upsert: true, useFindAndModify: false })
       .then(result => res.json(result))
       .catch(err => res.status(422).json(err.stack))
@@ -21,7 +21,7 @@ module.exports = {
   findAll: (req, res) => {
     db.Book
       .find(req.query)
-      .sort({ 'title': 1 })
+      .sort({ title: 1 })
       .then(docs => res.json(docs))
       .catch(err => res.status(422).json(err.stack))
   }

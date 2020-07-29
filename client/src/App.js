@@ -8,7 +8,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" render={props =>
           <Books {...props} type={'search'} />} />
-        <Route exact path="/saved" render={props => 
+        <Route exact path="/saved" render={props =>
           <Books {...props} type={'saved'} />} />
       </Switch>
     </Router>

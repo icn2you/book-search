@@ -1,6 +1,6 @@
 import React from 'react'
-import { 
-  AppBar, Button, ButtonGroup, Toolbar, Typography 
+import {
+  AppBar, Button, ButtonGroup, Toolbar, Typography
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const NavBar = () => {
-  const classes = useStyles();
+  const classes = useStyles()
 
   return (
     <div className={classes.root}>
@@ -24,8 +24,8 @@ const NavBar = () => {
           <Typography variant="h6" className={classes.title}>
             Google Books
           </Typography>
-          <ButtonGroup variant="text" 
-            color="primary" 
+          <ButtonGroup variant="text"
+            color="primary"
             aria-label="app navigation button group">
             <Button color="inherit" href="/">Search</Button>
             <Button color="inherit" href="/saved">Saved</Button>

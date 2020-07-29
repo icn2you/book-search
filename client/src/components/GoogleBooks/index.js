@@ -13,22 +13,22 @@ const GoogleBooks = ({ search, books, msg }) => {
       </Typography>
       { books.length
         ? books.map(book =>
-            <BookCard 
-              key={`${book.id}${book.etag}`}
-              title={book.volumeInfo.title}
-              isbns={book.volumeInfo.industryIdentifiers}
-              authors={book.volumeInfo.authors}
-              desc={book.volumeInfo.description}
-              link={book.volumeInfo.infoLink}
-              image={book.volumeInfo.imageLinks.thumbnail}
-              type="search"
-            />
-          )
+          <BookCard
+            key={`${book.id}${book.etag}`}
+            title={book.volumeInfo.title}
+            isbns={book.volumeInfo.industryIdentifiers}
+            authors={book.volumeInfo.authors}
+            desc={book.volumeInfo.description}
+            link={book.volumeInfo.infoLink}
+            image={book.volumeInfo.imageLinks.thumbnail}
+            type="search"
+          />
+        )
         : <Typography variant="h6" color="secondary">
-            {msg}
-          </Typography>  
+          {msg}
+        </Typography>
       }
-  </>
+    </>
   )
 }
 

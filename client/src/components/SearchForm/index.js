@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
-import { 
-  Box, Button, FormControl, FormHelperText, Paper, TextField, Typography 
+import {
+  Box, Button, FormControl, FormHelperText, Paper, TextField, Typography
 } from '@material-ui/core'
 import { DataContext } from '../'
 import API from '../../utils/API'
@@ -15,7 +15,7 @@ const SearchForm = () => {
 
   const handleFormInputChg = ev => {
     const { name, value } = ev.target
-    
+
     setFormData({
       ...formData,
       [name]: value
@@ -25,7 +25,7 @@ const SearchForm = () => {
   const handleFormSubmit = ev => {
     ev.preventDefault()
 
-    const queryStr = 
+    const queryStr =
       formData.query.trim().toLowerCase().replace(/\s+/g, '+')
 
     // Clear form input.
@@ -37,8 +37,8 @@ const SearchForm = () => {
         // console.log(data.items)
 
         const msg = (formData.query ? '' : 'No books found.')
-        
-        dispatch({ 
+
+        dispatch({
           type: 'update',
           query: formData.query,
           data: data.items,

@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header>
       <Box alignItems="center">
-        <NavBar />  
+        <NavBar />
         <Grid>
           <Grid item xs={12}>
             <Box mt={4}>
@@ -19,7 +19,7 @@ const Header = () => {
           </Grid>
         </Grid>
       </Box>
-    </header>   
+    </header>
   )
 }
 

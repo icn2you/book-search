@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, CssBaseline } from '@material-ui/core'
 
-const Main = ({children}) => {
+const Main = ({ children }) => {
   return (
     <main>
       <CssBaseline />
