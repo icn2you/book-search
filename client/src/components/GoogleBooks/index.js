@@ -16,11 +16,13 @@ const GoogleBooks = ({ search, books, msg }) => {
           <BookCard
             key={`${book.id}${book.etag}`}
             title={book.volumeInfo.title}
-            isbns={book.volumeInfo.industryIdentifiers}
-            authors={book.volumeInfo.authors}
-            desc={book.volumeInfo.description}
-            link={book.volumeInfo.infoLink}
-            image={book.volumeInfo.imageLinks.thumbnail}
+            isbns={book.volumeInfo.industryIdentifiers || []}
+            authors={book.volumeInfo.authors || []}
+            desc={book.volumeInfo.description || ''}
+            link={book.volumeInfo.infoLink || ''}
+            image={book.volumeInfo.imageLinks
+              ? book.volumeInfo.imageLinks.thumbnail
+              : '../assets/img/open-book.jpg'}
             type="search"
           />
         )
