@@ -9,6 +9,7 @@ module.exports = (() => {
 
   // PUT operation for `/api/books/:id` route
   router.route('/:id')
+    .put(booksController.delete)
 
   return router
 })()

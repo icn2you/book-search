@@ -5,7 +5,7 @@ const GOOGLE_BOOKS_API_KEY =
   'AIzaSyB0A6aFFmA9_wzo-NbaCX-nlQn2ww2svYA'
 
 export default {
-  // ...
+  // Google Books API search
   queryGoogleBooksAPI: (searchQuery) => {
     const queryStr = 
       `${searchQuery}&key=${GOOGLE_BOOKS_API_KEY}`
@@ -32,5 +32,13 @@ export default {
     body: JSON.stringify(book)
   })
     .then((resp => resp.json()))
-    .catch(err => console.error(err.stack))
+    .catch(err => console.error(err.stack)),
+
+  deleteBook: (id) => fetch(`/api/books/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ saved: false })
+  })
 }
