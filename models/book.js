@@ -10,7 +10,7 @@ module.exports = (() => {
     description: String,
     image: String,
     link: String,
-    saved: { type: Boolean, required: true, default: false }
+    saved: { type: Boolean, required: true, default: true }
   }, { timestamps: true })
 
   return mongoose.model('Book', BookSchema)
