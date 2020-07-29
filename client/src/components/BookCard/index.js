@@ -68,6 +68,7 @@ const BookCard = ({ id, title, isbns, authors, desc, image, link, type }) => {
           className={classes.details}>
           <CardContent className={classes.content}>
             <Typography variant="h5"
+              noWrap
               className={classes.title}>
               {title}
             </Typography>
@@ -108,14 +109,18 @@ const BookCard = ({ id, title, isbns, authors, desc, image, link, type }) => {
           </CardContent>
           <CardActions className={classes.actions}>
             <Box width={1} textAlign="right">
-              <Button href={link} target="_blank">View</Button>
+              <Button color="primary"
+                href={link}
+                target="_blank">
+                View
+              </Button>
               { (type === 'search')
-                ? <Button
+                ? <Button color="primary"
                   disabled={disabled}
                   onClick={handleSaveBook}>
                   {disabled ? 'Saved' : 'Save'}
                 </Button>
-                : <Button
+                : <Button color="secondary"
                   onClick={handleDeleteBook}>
                     Delete
                 </Button>

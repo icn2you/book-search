@@ -1,8 +1,23 @@
 import React, { useReducer } from 'react'
 import { Grid } from '@material-ui/core'
+import { createMuiTheme } from '@material-ui/core/styles'
+import { ThemeProvider } from '@material-ui/styles'
+import { purple } from '@material-ui/core/colors'
 import {
   BookResults, DataContext, Header, Main, Footer, SearchForm
 } from '../components'
+
+const theme = createMuiTheme({
+  palette: {
+    // Purple and green play nicely together.
+    primary: {
+      main: '#11cb5f'
+    },
+    secondary: {
+      main: purple[500]
+    }
+  }
+})
 
 const reducer = (state, action) => {
   if (action.type === 'update') {
@@ -22,25 +37,29 @@ const Books = ({ type }) => {
   const [state, dispatch] =
     useReducer(reducer, { queryStr: '', bookData: [], userMsg: '' })
 
-  return <>
-    <Header />
-    <Main alignItems="center">
-      <DataContext.Provider value={{ state, dispatch }}>
-        <Grid>
-          { (type === 'search')
-            ? <Grid item xs={12}>
-              <SearchForm />
+  return (
+    <>
+      <Header />
+      <ThemeProvider theme={theme}>
+        <Main alignItems="center">
+          <DataContext.Provider value={{ state, dispatch }}>
+            <Grid>
+              { (type === 'search')
+                ? <Grid item xs={12}>
+                  <SearchForm />
+                </Grid>
+                : ''
+              }
+              <Grid item xs={12}>
+                <BookResults type={type} />
+              </Grid>
             </Grid>
-            : ''
-          }
-          <Grid item xs={12}>
-            <BookResults type={type} />
-          </Grid>
-        </Grid>
-      </DataContext.Provider>
-    </Main>
-    <Footer />
-  </>
+          </DataContext.Provider>
+        </Main>
+      </ThemeProvider>
+      <Footer />
+    </>
+  )
 }
 
 export default Books

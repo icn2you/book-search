@@ -9,7 +9,7 @@ const Header = () => {
         <NavBar />
         <Grid>
           <Grid item xs={12}>
-            <Box mt={4}>
+            <Box mt={10}>
               <Typography variant='h2'
                 align="center"
                 gutterBottom>
