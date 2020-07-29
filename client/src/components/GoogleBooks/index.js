@@ -21,6 +21,7 @@ const GoogleBooks = ({ search, books, msg }) => {
               desc={book.volumeInfo.description}
               link={book.volumeInfo.infoLink}
               image={book.volumeInfo.imageLinks.thumbnail}
+              type="search"
             />
           )
         : <Typography variant="h6" color="secondary">
