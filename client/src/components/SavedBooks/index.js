@@ -12,13 +12,15 @@ const SavedBooks = ({ books, msg }) => {
       { books.length
         ? books.map(book =>
             <BookCard 
-              key={`${book._id}`}
+              key={book._id}
+              id={book._id}
               title={book.title}
               isbns={book.isbns}
               authors={book.authors}
               desc={book.description}
               link={book.link}
               image={book.image}
+              type="saved"
             />
           )
         : <Typography variant="h6" color="secondary">
