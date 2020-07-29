@@ -21,6 +21,11 @@ export default {
       .then((resp) => resp.json())
       .catch(err => console.error(err.stack))
   },
+
+  getBooks: (filter) => fetch(`/api/books?${filter}`)
+    .then((resp => resp.json()))
+    .catch((err => console.error(err.stack))),
+
   saveBook: (book) => fetch('/api/books', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
