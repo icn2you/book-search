@@ -85,7 +85,7 @@ const BookCard = ({ id, title, isbns, authors, desc, image, link, type }) => {
               : ''
             }
             { authors
-              ? <Typography variant="h6">
+              ? <Typography variant="h6" noWrap>
                 {
                   authors.map((author, i) => {
                     const by = (i === 0) ? 'by ' : ''
