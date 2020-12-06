@@ -130,3 +130,8 @@ fsf-boilerplate/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Markdown lint configuration
+.markdownlint.jsonc
+.markdownlint.json
+.markdownlintrc
