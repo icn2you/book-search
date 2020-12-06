@@ -10,7 +10,7 @@ const mongoose = require('mongoose')
 // HTTP port & Mongo URI
 const PORT = process.env.PORT || 3001
 const MONGODB_URI =
-  process.env.MONGODB_URI || 'mongodb://localhost/googlebooksdb'
+  process.env.MONGODB_URI || 'mongodb://localhost/google_books_db'
 
 // Create Express app and march on!
 const app = express()
