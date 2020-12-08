@@ -5,6 +5,12 @@
 
 # Google Books Search
 
+![GitHub issues](https://img.shields.io/github/issues/icn2you/book-search)
+![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/icn2you/book-search)
+![React Version](https://img.shields.io/badge/react-v17.0.1-61dafb.svg)
+![GitHub](https://img.shields.io/github/license/icn2you/book-search)
+![LinkedIn](https://img.shields.io/badge/LinkedIn-0077b5.svg?style=flat&logo=linkedin&link=https://www.linkedin.com/in/icn2you/)
+
 _An app that allows users to discover books and curate a reading list_
 
 [View Demo](#usage) · [Report Bug](https://github.com/icn2you/book-search/issues)
@@ -40,13 +46,13 @@ _An app that allows users to discover books and curate a reading list_
 
 </div>
 
-<p align="justify">
-Google Books Search is a single-page app (SPA) that allows the user to search for books by title, author, or key words. The app queries Google Books API with the search term(s) and returns relevant results.
-</p>
+<div align="justify">
 
-<p align="justify">
+Google Books Search is a single-page app (SPA) that allows the user to search for books by title, author, or key words. The app queries Google Books API with the search term(s) and returns relevant results.
+
 Each book result is displayed in its own card. The user can see further details about the book by selecting VIEW or add the book to a reading list by selecting SAVE. The user can return to their curated listby choosing the SAVED option in the upper righthand corner of the page.
-</p>
+
+</div>
 
 ### Built With
 
