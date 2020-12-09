@@ -7,13 +7,11 @@ import API from '../../utils/API'
 
 const useStyles = makeStyles({
   root: {
-    display: 'flex',
-    height: '25vh'
+    display: 'flex'
   },
   media: {
-    flex: '1 0 auto',
     maxWidth: 360,
-    width: '25%'
+    width: '30%'
   },
   details: {
     display: 'flex',
