@@ -7,8 +7,9 @@
 
 ![GitHub issues](https://img.shields.io/github/issues/icn2you/book-search?style=flat-square)
 ![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/icn2you/book-search?style=flat-square)
-![React Version](https://img.shields.io/badge/react-v17.0.1-61dafb.svg?style=flat-square)
+![React Version](https://img.shields.io/badge/react-v16.13.1-61dafb.svg?style=flat-square)
 ![GitHub](https://img.shields.io/github/license/icn2you/book-search?style=flat-square)
+![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/icn2you/book-search?style=flat-square)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077b5.svg?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/icn2you/)
 
 _An app that allows users to discover books and curate a reading list_
