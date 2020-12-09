@@ -6,6 +6,7 @@ import { purple } from '@material-ui/core/colors'
 import {
   BookResults, DataContext, Header, Main, Footer, SearchForm
 } from '../components'
+import Favicon from 'react-favicon'
 
 const theme = createMuiTheme({
   palette: {
@@ -39,6 +40,7 @@ const Books = ({ type }) => {
 
   return (
     <>
+      <Favicon url={require('../assets/img/books-logo.png')} />
       <Header />
       <ThemeProvider theme={theme}>
         <Main alignItems="center">
