@@ -57,9 +57,18 @@ Each book result is displayed in its own card. The user can see further details 
 
 ### Built With
 
-Google Books Search is built with the MERN-stack.
+[![HTML5][html5-logo]][html5-link]
+[![CSS3][css3-logo]][css3-link]&nbsp;&nbsp;
+[![JS][js-logo]][js-link]&nbsp;&nbsp;
+[![MongoDB][mongodb-logo]][mongodb-link]&nbsp;&nbsp;
+[![Express][express-logo]][express-link]&nbsp;&nbsp;
+[![React][react-logo]][react-link]&nbsp;&nbsp;
+[![Nodejs][nodejs-logo]][nodejs-link]&nbsp;&nbsp;
+[![Material-UI][materialui-logo]][materialui-link]&nbsp;&nbsp;
+[![VSCode][vscode-logo]][vscode-link]&nbsp;&nbsp;
+[![GitHub][github-logo]][github-link]
 
-![Core Technologies](./client/src/assets/img/built-with-logos.png)
+Google Books Search is built with the [MERN-stack][mern-link].
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -129,3 +138,30 @@ Contact me at [christopher.zenner@icn2you.com](mailto:christopher.zenner@icn2you
 
 - [Freepik](https://www.flaticon.com/authors/freepik) (project icon)
 - [The Coding Boot Camp @ UCLA Extension](https://bootcamp.uclaextension.edu/coding/)
+
+<!-- URLS -->
+<!-- Web Technology Logos -->
+[html5-logo]: ./client/src/assets/img/logos/html5-logo-32.png
+[css3-logo]: ./client/src/assets/img/logos/css3-logo-32.png
+[js-logo]: ./client/src/assets/img/logos/javascript-logo-32.png
+[mongodb-logo]: ./client/src/assets/img/logos/mongodb-leaf-32.png
+[express-logo]: ./client/src/assets/img/logos/express-logo-32.png
+[react-logo]: ./client/src/assets/img/logos/react-logo-32.png
+[nodejs-logo]: ./client/src/assets/img/logos/nodejs-logo-32.png
+[materialui-logo]: ./client/src/assets/img/logos/material-ui-logo-32.png
+[vscode-logo]: ./client/src/assets/img/logos/vscode-logo-32.png
+[github-logo]: ./client/src/assets/img/logos/github-mark-32.png
+
+<!-- Web Technology Links -->
+[html5-link]: https://html.spec.whatwg.org/
+[css3-link]: https://www.w3.org/Style/CSS/
+[js-link]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+[mongodb-link]: https://www.mongodb.com/1
+[express-link]: https://expressjs.com/
+[react-link]: https://reactjs.org/
+[nodejs-link]: https://nodejs.org/
+[materialui-link]: https://material-ui.com/
+[vscode-link]: https://code.visualstudio.com/
+[github-link]: https://github.com/
+
+[mern-link]: https://www.educative.io/edpresso/what-is-mern-stack
